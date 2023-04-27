@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel: Access, Deployment, Developer Keys and SAP Add-on Requests. User Access Reviews and Operational
+        Checklists</title>
+    <meta name="description"
+        content="Sentinel: Access, Deployment, Developer Keys and SAP Add-on Requests. User Access Reviews and Operational Checklists" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .fc-button {
+            background-color: #5867dd !important;
+            color: white !important;
+            border: none !important;
+        }
+
+        .fc-button .fc-icon {
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header sec -->
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/anglo_logo.png" class="img-fluid" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13 11H3C2.4 11 2 10.6 2 10V9C2 8.4 2.4 8 3 8H13C13.6 8 14 8.4 14 9V10C14 10.6 13.6 11 13 11ZM22 5V4C22 3.4 21.6 3 21 3H3C2.4 3 2 3.4 2 4V5C2 5.6 2.4 6 3 6H21C21.6 6 22 5.6 22 5Z"
+                                fill="currentColor" />
+                            <path opacity="0.3"
+                                d="M21 16H3C2.4 16 2 15.6 2 15V14C2 13.4 2.4 13 3 13H21C21.6 13 22 13.4 22 14V15C22 15.6 21.6 16 21 16ZM14 20V19C14 18.4 13.6 18 13 18H3C2.4 18 2 18.4 2 19V20C2 20.6 2.4 21 3 21H13C13.6 21 14 20.6 14 20Z"
+                                fill="currentColor" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <!-- main manu item  -->
+                        <li class="nav-item request_link">
+                            <a class="nav-link desktop-links" href="#">Requests</a>
+                            <input type="checkbox" id="show-request">
+                            <label for="show-request">Requests</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <!-- drowpdown manu item  -->
+                            <div class="sub_manu request">
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">Access Requests <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                    <input type="checkbox" id="show-access-request">
+                                    <label for="show-access-request">Access Requests</label><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <!-- sub dropdow manu item  -->
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+                                        <a href="">My Checklists</a>
+                                    </div>
+
+                                </div>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">Deployment Requests <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg></a>
+                                    <input type="checkbox" id="show-deployemnt-request">
+                                    <label for="show-deployemnt-request">Deployment Requests</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+
+                                    </div>
+                                </div>
+                                <div class="sub_manu_link">
+
+                                    <a class="desktop-links">Developer Key Requests <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                    <input type="checkbox" id="show-deployemnt-key-request">
+                                    <label for="show-deployemnt-key-request">Deployment Key Requests</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+
+                                    </div>
+                                </div>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">SAP Add-on Requests <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                    <input type="checkbox" id="show-sap-add-on-request">
+                                    <label for="show-sap-add-on-request">SAP Add-on Requests </label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+
+                                    </div>
+                                </div>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">System Operational Requests <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+
+                                    </a>
+                                    <input type="checkbox" id="show-system-operational">
+                                    <label for="show-system-operational">System Operational Requests </label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Data Synchronization</a>
+                                        <a href="">Server Patch</a>
+                                        <a href="">Server Upgrade</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- main manu item  -->
+
+                        <li class="nav-item checklist_link">
+                            <a class="nav-link desktop-links" href="#">Checklists</a>
+                            <input type="checkbox" id="show-checklist">
+                            <label for="show-checklist">Checklists</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu checklist">
+                                <div class="sub_manu_link">
+                                    <a class="nav-link desktop-links">Access Request Checklists
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg></a>
+
+                                    <input type="checkbox" id="show-request-checklists">
+                                    <label for="show-request-checklists">Access Request Checklists</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Pending Items
+                                        </a>
+                                        <a href="">My Cheklist Items
+                                        </a>
+                                        <a href="">Upload SAP Logs</a>
+                                    </div>
+                                </div>
+
+
+                                <div class="sub_manu_link">
+                                    <a class="nav-link desktop-links">System Operational Checklists
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+
+                                    </a>
+                                    <input type="checkbox" id="show-system-operational-checklist">
+                                    <label for="show-system-operational-checklist">System Operational Checklists</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Pending Items
+                                        </a>
+                                        <a href="">My Cheklist Items
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item user_access">
+                            <a class="nav-link desktop-links" href="">User Access</a>
+                            <input type="checkbox" id="show-Access">
+                            <label for="show-Access">User Access</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+
+                            <div class="sub_manu user_access">
+                                <a href="">Pending Approvals</a>
+
+
+                                <a href="">Exceptions</a>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">Admin
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+
+                                    </a>
+                                    <input type="checkbox" id="show-admin">
+                                    <label for="show-admin">Admin</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Pending Items
+                                        </a>
+                                        <a href="">My Cheklist Items
+                                        </a>
+                                        <a href="">Upload SAP Logs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item report_links">
+                            <input type="checkbox" id="show-report">
+                            <label for="show-report">Report</label>
+                            <a class="nav-link desktop-links" href="#">Reports</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu report">
+                                <a href="">Requests</a>
+                                <a href="">Checklists</a>
+                                <a href="">User Review</a>
+                            </div>
+                        </li>
+                        <li class="nav-item admin_links">
+
+                            <a class="nav-link desktop-links" href="#">Admin</a>
+                            <input type="checkbox" id="show-Admin">
+                            <label for="show-Admin">Admin</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu admin">
+                                <a href="">User Management</a>
+                                <a href="calendar.html">Calendar</a>
+                                <a href="">Delegate Approvals</a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item helps">
+                            <input type="checkbox" id="show-helps">
+                            <label for="show-helps">helps</label>
+                            <a class="nav-link desktop-links" href="#">Helps</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu helps">
+                                <a href="">Log a Ticket</a>
+                                <a href="">FAQ</a>
+                                <a href="">About Sentinel</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item helps">
+                            <input type="checkbox" id="show-helps">
+                            <label for="show-helps">Component Added</label>
+                            <a class="nav-link desktop-links" href="#">Component Added</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu helps">
+                                <a href="wizard-2.html">wizard 2</a>
+                                <a href="data-local.html">Data local</a>
+                                <a href="modal.html">Modal</a>
+                                <a href="typography.html">Typography</a>
+                                <a href="summernote.html">Summernote</a>
+                                <a href="form-repeater.html">Form Repeater</a>
+                                <a href="base.html">Base</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <ul class="right_side_nav search_and_profile">
+                    <div class="search_and_profiles_wrap">
+                        <div class="search search_icon">
+                            <span class="search_icon_svg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg></span>
+
+                            <!-- search input drowpdown -->
+                            <form class="search_input_dropdown">
+                                <div class="search_input">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                        </svg></span>
+                                    <input type="text" class="form-control" id="exampleInputText"
+                                        aria-describedby="emailHelp" placeholder="Search...">
+
+                                </div>
+
+                            </form>
+                        </div>
+                        <!-- profile image -->
+
+                        <div class="user_profile_icon">
+                            <img src="img/user_logo.png" class="img-fluid" alt="">
+
+                            <div class="profile_details_and_account_settings">
+                                <div class="profile_details">
+                                    <img src="img/user_logo.png" class="img-fluid" alt="">
+                                    <div class="user_name">
+                                        <strong>Adam Smith</strong>
+                                        <a href="">junior@smith.com</a>
+                                    </div>
+                                </div>
+                                <ul class="account_setting_and_sign_out">
+                                    <li class="nav-link"><a href="#">Account Settings</a> </li>
+                                    <li class="nav-link"><a href="#">Sign out</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- more about profile  -->
+
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Wizardhttp://localhost/metronic/custom/pages/wizard/wizard-2.html -->
+
+
+    <section class="wizard-2">
+        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+            <div class="kt-container  kt-container--fluid ">
+                <div class="kt-subheader__main">
+                    <h3 class="kt-subheader__title">
+                        Calendar </h3>
+                    <span class="kt-subheader__separator kt-hidden"></span>
+                    <div class="kt-subheader__breadcrumbs">
+                        <a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+                        <span class="kt-subheader__breadcrumbs-separator"></span>
+                        <a href="" class="kt-subheader__breadcrumbs-link">
+                            Admin </a>
+                        <span class="kt-subheader__breadcrumbs-separator"></span>
+                        <a href="" class="kt-subheader__breadcrumbs-link">
+                            Calendar </a>
+
+                        <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+                    </div>
+                </div>
+                <div class="kt-subheader__toolbar">
+                    <div class="kt-subheader__wrapper">
+                        <a href="#" class="btn kt-subheader__btn-primary">
+                            Actions &nbsp;
+
+                            <!--<i class="flaticon2-calendar-1"></i>-->
+                        </a>
+                        <div class="dropdown dropdown-inline" data-toggle="kt-tooltip" title="" data-placement="left"
+                            data-original-title="Quick actions">
+                            <a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                    class="kt-svg-icon kt-svg-icon--success kt-svg-icon--md">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                        <path
+                                            d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z"
+                                            fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                        <path
+                                            d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z"
+                                            fill="#000000"></path>
+                                    </g>
+                                </svg>
+
+                                <!--<i class="flaticon2-plus"></i>-->
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-md dropdown-menu-right">
+
+                                <!--begin::Nav-->
+                                <ul class="kt-nav">
+                                    <li class="kt-nav__head">
+                                        Add anything or jump to:
+                                        <i class="flaticon2-information" data-toggle="kt-tooltip" data-placement="right"
+                                            title="" data-original-title="Click to learn more..."></i>
+                                    </li>
+                                    <li class="kt-nav__separator"></li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-drop"></i>
+                                            <span class="kt-nav__link-text">Order</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-calendar-8"></i>
+                                            <span class="kt-nav__link-text">Ticket</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-telegram-logo"></i>
+                                            <span class="kt-nav__link-text">Goal</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-new-email"></i>
+                                            <span class="kt-nav__link-text">Support Case</span>
+                                            <span class="kt-nav__link-badge">
+                                                <span class="kt-badge kt-badge--success">5</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__separator"></li>
+                                    <li class="kt-nav__foot">
+                                        <a class="btn btn-label-brand btn-bold btn-sm" href="#">Upgrade plan</a>
+                                        <a class="btn btn-clean btn-bold btn-sm" href="#" data-toggle="kt-tooltip"
+                                            data-placement="right" title=""
+                                            data-original-title="Click to learn more...">Learn more</a>
+                                    </li>
+                                </ul>
+
+                                <!--end::Nav-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+            <div class="kt-portlet">
+                <div class="kt-portlet__body kt-portlet__body--fit">
+                    <div class="kt-grid  kt-wizard-v2 kt-wizard-v2--white" id="kt_wizard_v2"
+                        data-ktwizard-state="step-first">
+
+
+                        <div class="container-fluid px-4 py-4">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div id='calendar'></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex justify-content-between
+                                            align-items-center">
+                                        <div class="fs-4">DETAILS</div>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#myModal">
+                                            + Add Event
+                                        </button>
+                                    </div>
+                                    <div class="pt-4">
+                                        <p class="d-none" id="eventId"></p>
+                                        <h5>Title</h5>
+                                        <p class="fs-5 ps-3" id="eventTitleInfo"></p>
+                                        <h5>Start date</h5>
+                                        <p class="fs-5 ps-3" id="startDateInfo"></p>
+                                        <h5>End date</h5>
+                                        <p class="fs-5 ps-3" id="endDateInfo"></p>
+                                    </div>
+                                    <div class="pt-4 d-flex justify-content-around">
+                                        <button class="btn btn-primary" onclick="editEvent()">Edit event</button>
+                                        <button class="btn btn-danger" onclick="deleteEvent()">Delete event</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--begin::Modal-->
+    <div class="modal fade" id="kt_modal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-md modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body py-5 text-center">
+                    <img src="img/right-check.png" class="" alt="">
+                    <p class="my-4">The application has been successfully submitted!</p>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ok</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">
+                        Add an event
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body row">
+                    <div class="col-md-8">
+                        <div class="mb-3 row">
+                           
+                        <label for="my-dropdown" class="col-sm-3 col-form-label" >Category</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="my-dropdown" name="my-dropdown">
+                                    <option class="form-control" value="option1" id="eventcategory" style="background-color: red;" >Meeting</option>
+                                    <option class="form-control" value="option2" style="background-color: Green;">Hospital</option>
+                                    <option class="form-control" value="option3" style="background-color: skyblue;">Movie</option>
+                                    <option class="form-control" value="option4" style="background-color: yellow;">Sports</option>
+                                </select>
+                            </div>                      
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="eventTitle" class="col-sm-3 col-form-label">Title</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="eventTitle">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="startDate" class="col-sm-3 col-form-label">Start date</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control" id="startDate">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="endDate" class="col-sm-3 col-form-label">End date</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control" id="endDate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-4'>
+                        <div class="mb-3 row">
+                            <label for="endDate" class="col-sm-3 col-form-label">Details</label>
+                        </div>
+                        <div class="mb-3 row">
+                            <li class="" id="showdetails">
+                                sdfadsf
+                            </li>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="saveEvent()">Save</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+        var KTAppOptions = {
+            "colors": {
+                "state": {
+                    "brand": "#5d78ff",
+                    "light": "#ffffff",
+                    "dark": "#282a3c",
+                    "primary": "#5867dd",
+                    "success": "#34bfa3",
+                    "info": "#36a3f7",
+                    "warning": "#ffb822",
+                    "danger": "#fd3995"
+                },
+                "base": {
+                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                }
+            }
+        };
+    </script>
+
+
+    <!-- bootstrap 5 buldle js  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src='./calendar/node_modules/fullcalendar/index.global.min.js'></script>
+    <script src="js/plugins.bundle.js" type="text/javascript"></script>
+    <script src="js/scripts.bundle.js" type="text/javascript"></script>
+    <script src="js/wizard.js" type="text/javascript"></script>
+    <script src="css/pages/wizard/wizard-2.js" type="text/javascript"></script>
+    <script src="js/app.js"></script>
+    <script src="./calendar/index.js"></script>
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+
+    <!--begin::Page Scripts(used by this page) -->
+    <script src="js/summernote.js" type="text/javascript"></script>
+
+    <!--begin::Page Scripts(used by this page) -->
+    <script src="js/form-repeater.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>

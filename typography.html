@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel: Access, Deployment, Developer Keys and SAP Add-on Requests. User Access Reviews and Operational
+        Checklists</title>
+    <meta name="description"
+        content="Sentinel: Access, Deployment, Developer Keys and SAP Add-on Requests. User Access Reviews and Operational Checklists" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- header sec -->
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/anglo_logo.png" class="img-fluid" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13 11H3C2.4 11 2 10.6 2 10V9C2 8.4 2.4 8 3 8H13C13.6 8 14 8.4 14 9V10C14 10.6 13.6 11 13 11ZM22 5V4C22 3.4 21.6 3 21 3H3C2.4 3 2 3.4 2 4V5C2 5.6 2.4 6 3 6H21C21.6 6 22 5.6 22 5Z"
+                                fill="currentColor" />
+                            <path opacity="0.3"
+                                d="M21 16H3C2.4 16 2 15.6 2 15V14C2 13.4 2.4 13 3 13H21C21.6 13 22 13.4 22 14V15C22 15.6 21.6 16 21 16ZM14 20V19C14 18.4 13.6 18 13 18H3C2.4 18 2 18.4 2 19V20C2 20.6 2.4 21 3 21H13C13.6 21 14 20.6 14 20Z"
+                                fill="currentColor" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <!-- main manu item  -->
+                        <li class="nav-item request_link">
+                            <a class="nav-link desktop-links" href="#">Requests</a>
+                            <input type="checkbox" id="show-request">
+                            <label for="show-request">Requests</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <!-- drowpdown manu item  -->
+                            <div class="sub_manu request">
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">Access Requests <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                    <input type="checkbox" id="show-access-request">
+                                    <label for="show-access-request">Access Requests</label><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <!-- sub dropdow manu item  -->
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+                                        <a href="">My Checklists</a>
+                                    </div>
+
+                                </div>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">Deployment Requests <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg></a>
+                                    <input type="checkbox" id="show-deployemnt-request">
+                                    <label for="show-deployemnt-request">Deployment Requests</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+
+                                    </div>
+                                </div>
+                                <div class="sub_manu_link">
+
+                                    <a class="desktop-links">Developer Key Requests <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                    <input type="checkbox" id="show-deployemnt-key-request">
+                                    <label for="show-deployemnt-key-request">Deployment Key Requests</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+
+                                    </div>
+                                </div>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">SAP Add-on Requests <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                    <input type="checkbox" id="show-sap-add-on-request">
+                                    <label for="show-sap-add-on-request">SAP Add-on Requests </label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+
+                                    </div>
+                                </div>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">System Operational Requests <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+
+                                    </a>
+                                    <input type="checkbox" id="show-system-operational">
+                                    <label for="show-system-operational">System Operational Requests </label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Data Synchronization</a>
+                                        <a href="">Server Patch</a>
+                                        <a href="">Server Upgrade</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- main manu item  -->
+
+                        <li class="nav-item checklist_link">
+                            <a class="nav-link desktop-links" href="#">Checklists</a>
+                            <input type="checkbox" id="show-checklist">
+                            <label for="show-checklist">Checklists</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu checklist">
+                                <div class="sub_manu_link">
+                                    <a class="nav-link desktop-links">Access Request Checklists
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg></a>
+
+                                    <input type="checkbox" id="show-request-checklists">
+                                    <label for="show-request-checklists">Access Request Checklists</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Pending Items
+                                        </a>
+                                        <a href="">My Cheklist Items
+                                        </a>
+                                        <a href="">Upload SAP Logs</a>
+                                    </div>
+                                </div>
+
+
+                                <div class="sub_manu_link">
+                                    <a class="nav-link desktop-links">System Operational Checklists
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+
+                                    </a>
+                                    <input type="checkbox" id="show-system-operational-checklist">
+                                    <label for="show-system-operational-checklist">System Operational Checklists</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Pending Items
+                                        </a>
+                                        <a href="">My Cheklist Items
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item user_access">
+                            <a class="nav-link desktop-links" href="">User Access</a>
+                            <input type="checkbox" id="show-Access">
+                            <label for="show-Access">User Access</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+
+                            <div class="sub_manu user_access">
+                                <a href="">Pending Approvals</a>
+
+
+                                <a href="">Exceptions</a>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">Admin
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+
+                                    </a>
+                                    <input type="checkbox" id="show-admin">
+                                    <label for="show-admin">Admin</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Pending Items
+                                        </a>
+                                        <a href="">My Cheklist Items
+                                        </a>
+                                        <a href="">Upload SAP Logs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item report_links">
+                            <input type="checkbox" id="show-report">
+                            <label for="show-report">Report</label>
+                            <a class="nav-link desktop-links" href="#">Reports</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu report">
+                                <a href="">Requests</a>
+                                <a href="">Checklists</a>
+                                <a href="">User Review</a>
+                            </div>
+                        </li>
+                        <li class="nav-item admin_links">
+
+                            <a class="nav-link desktop-links" href="#">Admin</a>
+                            <input type="checkbox" id="show-Admin">
+                            <label for="show-Admin">Admin</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu admin">
+                                <a href="">User Management</a>
+                                <a href="calendar.html">Calendar</a>
+                                <a href="">Delegate Approvals</a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item helps">
+                            <input type="checkbox" id="show-helps">
+                            <label for="show-helps">helps</label>
+                            <a class="nav-link desktop-links" href="#">Helps</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu helps">
+                                <a href="">Log a Ticket</a>
+                                <a href="">FAQ</a>
+                                <a href="">About Sentinel</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item helps">
+                            <input type="checkbox" id="show-helps">
+                            <label for="show-helps">Component Added</label>
+                            <a class="nav-link desktop-links" href="#">Component Added</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu helps">
+                                <a href="wizard-2.html">wizard 2</a>
+                                <a href="data-local.html">Data local</a>
+                                <a href="modal.html">Modal</a>
+                                <a href="typography.html">Typography</a>
+                                <a href="summernote.html">Summernote</a>
+                                <a href="form-repeater.html">Form Repeater</a>
+                                <a href="base.html">Base</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <ul class="right_side_nav search_and_profile">
+                    <div class="search_and_profiles_wrap">
+                        <div class="search search_icon">
+                            <span class="search_icon_svg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg></span>
+
+                            <!-- search input drowpdown -->
+                            <form class="search_input_dropdown">
+                                <div class="search_input">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                        </svg></span>
+                                    <input type="text" class="form-control" id="exampleInputText"
+                                        aria-describedby="emailHelp" placeholder="Search...">
+
+                                </div>
+
+                            </form>
+                        </div>
+                        <!-- profile image -->
+
+                        <div class="user_profile_icon">
+                            <img src="img/user_logo.png" class="img-fluid" alt="">
+
+                            <div class="profile_details_and_account_settings">
+                                <div class="profile_details">
+                                    <img src="img/user_logo.png" class="img-fluid" alt="">
+                                    <div class="user_name">
+                                        <strong>Adam Smith</strong>
+                                        <a href="">junior@smith.com</a>
+                                    </div>
+                                </div>
+                                <ul class="account_setting_and_sign_out">
+                                    <li class="nav-link"><a href="#">Account Settings</a> </li>
+                                    <li class="nav-link"><a href="#">Sign out</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- more about profile  -->
+
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <!-- Typography http://localhost/metronic/components/base/typography.html -->
+
+    <section class="typography">
+        <!-- end:: Aside -->
+							<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+								<!-- begin:: Subheader -->
+								<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+									<div class="kt-container  kt-container--fluid ">
+										<div class="kt-subheader__main">
+											<h3 class="kt-subheader__title">
+												Typography </h3>
+											<span class="kt-subheader__separator kt-hidden"></span>
+											<div class="kt-subheader__breadcrumbs">
+												<a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+												<span class="kt-subheader__breadcrumbs-separator"></span>
+												<a href="" class="kt-subheader__breadcrumbs-link">
+													Base </a>
+												<span class="kt-subheader__breadcrumbs-separator"></span>
+												<a href="" class="kt-subheader__breadcrumbs-link">
+													Typography </a>
+
+												<!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+											</div>
+										</div>
+										<div class="kt-subheader__toolbar">
+											<div class="kt-subheader__wrapper">
+												<a href="#" class="btn kt-subheader__btn-primary">
+													Actions &nbsp;
+
+													<!--<i class="flaticon2-calendar-1"></i>-->
+												</a>
+												<div class="dropdown dropdown-inline" data-toggle="kt-tooltip" title="Quick actions" data-placement="left">
+													<a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+														<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--success kt-svg-icon--md">
+															<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																<polygon points="0 0 24 0 24 24 0 24" />
+																<path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+																<path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />
+															</g>
+														</svg>
+
+														<!--<i class="flaticon2-plus"></i>-->
+													</a>
+													<div class="dropdown-menu dropdown-menu-fit dropdown-menu-md dropdown-menu-right">
+
+														<!--begin::Nav-->
+														<ul class="kt-nav">
+															<li class="kt-nav__head">
+																Add anything or jump to:
+																<i class="flaticon2-information" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more..."></i>
+															</li>
+															<li class="kt-nav__separator"></li>
+															<li class="kt-nav__item">
+																<a href="#" class="kt-nav__link">
+																	<i class="kt-nav__link-icon flaticon2-drop"></i>
+																	<span class="kt-nav__link-text">Order</span>
+																</a>
+															</li>
+															<li class="kt-nav__item">
+																<a href="#" class="kt-nav__link">
+																	<i class="kt-nav__link-icon flaticon2-calendar-8"></i>
+																	<span class="kt-nav__link-text">Ticket</span>
+																</a>
+															</li>
+															<li class="kt-nav__item">
+																<a href="#" class="kt-nav__link">
+																	<i class="kt-nav__link-icon flaticon2-telegram-logo"></i>
+																	<span class="kt-nav__link-text">Goal</span>
+																</a>
+															</li>
+															<li class="kt-nav__item">
+																<a href="#" class="kt-nav__link">
+																	<i class="kt-nav__link-icon flaticon2-new-email"></i>
+																	<span class="kt-nav__link-text">Support Case</span>
+																	<span class="kt-nav__link-badge">
+																		<span class="kt-badge kt-badge--success">5</span>
+																	</span>
+																</a>
+															</li>
+															<li class="kt-nav__separator"></li>
+															<li class="kt-nav__foot">
+																<a class="btn btn-label-brand btn-bold btn-sm" href="#">Upgrade plan</a>
+																<a class="btn btn-clean btn-bold btn-sm" href="#" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more...">Learn more</a>
+															</li>
+														</ul>
+
+														<!--end::Nav-->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- end:: Subheader -->
+
+								<!-- begin:: Content -->
+								<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+									<div class="row">
+										<div class="col-md-6">
+
+											<!--begin::Portlet-->
+											<div class="kt-portlet kt-portlet--tab">
+												<div class="kt-portlet__head">
+													<div class="kt-portlet__head-label">
+														<span class="kt-portlet__head-icon kt-hide">
+															<i class="la la-gear"></i>
+														</span>
+														<h3 class="kt-portlet__head-title">
+															Headings
+														</h3>
+													</div>
+												</div>
+												<div class="kt-portlet__body">
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available.
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<div class="row">
+																<div class="col-md-6">
+																	<h1>h1. Heading 1</h1>
+																	<div class="kt-space-10"></div>
+																	<h2>h2. Heading 2</h2>
+																	<div class="kt-space-10"></div>
+																	<h3>h3. Heading 3</h3>
+																	<div class="kt-space-10"></div>
+																	<h4>h4. Heading 4</h4>
+																	<div class="kt-space-10"></div>
+																	<h5>h5. Heading 5</h5>
+																	<div class="kt-space-10"></div>
+																	<h6>h6. Heading 6</h6>
+																</div>
+																<div class="col-md-6">
+																	<h1 class="kt-font-success">h1. Heading 1</h1>
+																	<div class="kt-space-10"></div>
+																	<h2 class="kt-font-info">h2. Heading 2</h2>
+																	<div class="kt-space-10"></div>
+																	<h3 class="kt-font-warning">h3. Heading 3</h3>
+																	<div class="kt-space-10"></div>
+																	<h4 class="kt-font-danger">h4. Heading 4</h4>
+																	<div class="kt-space-10"></div>
+																	<h5 class="kt-font-primary">h5. Heading 5</h5>
+																	<div class="kt-space-10"></div>
+																	<h6 class="kt-font-brand">h6. Heading 6</h6>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!--end::Section-->
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															Use the included utility classes to recreate the small secondary heading text.
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<h3>
+																Fancy display heading
+																<small class="text-muted">With faded secondary text</small>
+															</h3>
+														</div>
+													</div>
+
+													<!--end::Section-->
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															Larger, slightly more opinionated heading styles.
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<h3 class="display-1">Display 1</h3>
+															<h3 class="display-2">Display 2</h3>
+															<h3 class="display-3">Display 3</h3>
+														</div>
+													</div>
+
+													<!--end::Section-->
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															Make a paragraph stand out by adding <code>.lead</code>.
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<p class="lead">
+																Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+															</p>
+														</div>
+													</div>
+
+													<!--end::Section-->
+												</div>
+											</div>
+
+											<!--end::Portlet-->
+
+											<!--begin::Portlet-->
+											<div class="kt-portlet kt-portlet--tab">
+												<div class="kt-portlet__head">
+													<div class="kt-portlet__head-label">
+														<span class="kt-portlet__head-icon kt-hide">
+															<i class="la la-gear"></i>
+														</span>
+														<h3 class="kt-portlet__head-title">
+															General
+														</h3>
+													</div>
+												</div>
+												<div class="kt-portlet__body">
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															Styling for common inline HTML5 elements:
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<p>You can use the mark tag to
+																<mark>highlight</mark> text.</p>
+															<p><del>This line of text is meant to be treated as deleted text.</del></p>
+															<p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+															<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+															<p><u>This line of text will render as underlined</u></p>
+															<p><small>This line of text is meant to be treated as fine print.</small></p>
+															<p><strong>This line rendered as bold text.</strong></p>
+															<p><em>This line rendered as italicized text.</em></p>
+														</div>
+													</div>
+
+													<!--end::Section-->
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															Stylized abbreviations implementation of HTML’s <code>&lt;abbr&gt;</code> element:
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<p><abbr title="attribute">attr</abbr></p>
+															<p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+														</div>
+													</div>
+
+													<!--end::Section-->
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															Quoting blocks of content:
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<div class="kt-demo" data-code-preview="true" data-code-html="true" data-code-js="false">
+																<div class="kt-demo__preview">
+																	<blockquote class="blockquote">
+																		<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+																		<footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+																	</blockquote>
+																	<blockquote class="blockquote blockquote-reverse">
+																		<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+																		<footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+																	</blockquote>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<!--end::Section-->
+												</div>
+											</div>
+
+											<!--end::Portlet-->
+										</div>
+										<div class="col-md-6">
+
+											<!--begin::Portlet-->
+											<div class="kt-portlet kt-portlet--tab">
+												<div class="kt-portlet__head">
+													<div class="kt-portlet__head-label">
+														<span class="kt-portlet__head-icon kt-hide">
+															<i class="la la-gear"></i>
+														</span>
+														<h3 class="kt-portlet__head-title">
+															Text
+														</h3>
+													</div>
+												</div>
+												<div class="kt-portlet__body">
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															Basic text examples:
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<p><span>Example text</span></p>
+															<p><span class="kt-font-bold">Example bold text</span></p>
+															<p><span class="kt-font-bolder">Example bolder text</span></p>
+															<p><span class="kt-font-boldest">Example boldest text</span></p>
+															<p><span class="kt-font-transform-u">Example uppercase text</span></p>
+														</div>
+													</div>
+
+													<!--end::Section-->
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															State colors:
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<p><span class="kt-font-success">Success state text</span></p>
+															<p><span class="kt-font-warning">Warning state text</span></p>
+															<p><span class="kt-font-info">Info state text</span></p>
+															<p><span class="kt-font-danger">Danger state text</span></p>
+															<p><span class="kt-font-primary">Primary state text</span></p>
+														</div>
+													</div>
+
+													<!--end::Section-->
+												</div>
+											</div>
+
+											<!--end::Portlet-->
+
+											<!--begin::Portlet-->
+											<div class="kt-portlet kt-portlet--tab">
+												<div class="kt-portlet__head">
+													<div class="kt-portlet__head-label">
+														<span class="kt-portlet__head-icon kt-hide">
+															<i class="la la-gear"></i>
+														</span>
+														<h3 class="kt-portlet__head-title">
+															Links
+														</h3>
+													</div>
+												</div>
+												<div class="kt-portlet__body">
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															Basic link examples:
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<p><a href="#" class="kt-link">Example link</a></p>
+															<p><a href="#" class="kt-link kt-font-bold">Example bold link</a></p>
+															<p><a href="#" class="kt-link kt-font-bolder">Example bolder link</a></p>
+															<p><a href="#" class="kt-link kt-font-boldest">Example boldest link</a></p>
+															<p><a href="#" class="kt-link kt-font-transform-u">Example uppercase link</a></p>
+														</div>
+													</div>
+
+													<!--end::Section-->
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															State colors:
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<p><a href="#" class="kt-link kt-link--state kt-link--success">Success state</a></p>
+															<p><a href="#" class="kt-link kt-link--state kt-link--warning">Warning state</a></p>
+															<p><a href="#" class="kt-link kt-link--state kt-link--info">Info state</a></p>
+															<p><a href="#" class="kt-link kt-link--state kt-link--danger">Danger state</a></p>
+															<p><a href="#" class="kt-link kt-link--state kt-link--primary">Primary state</a></p>
+														</div>
+													</div>
+
+													<!--end::Section-->
+												</div>
+											</div>
+
+											<!--end::Portlet-->
+
+											<!--begin::Portlet-->
+											<div class="kt-portlet kt-portlet--tab">
+												<div class="kt-portlet__head">
+													<div class="kt-portlet__head-label">
+														<span class="kt-portlet__head-icon kt-hide">
+															<i class="la la-gear"></i>
+														</span>
+														<h3 class="kt-portlet__head-title">
+															Divider
+														</h3>
+													</div>
+												</div>
+												<div class="kt-portlet__body">
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<span class="kt-section__info">
+															Basic divider:
+														</span>
+														<div class="kt-section__content kt-section__content--solid">
+															<div class="kt-divider">
+																<span></span>
+																<span>or</span>
+																<span></span>
+															</div>
+														</div>
+													</div>
+
+													<!--end::Section-->
+												</div>
+											</div>
+
+											<!--end::Portlet-->
+
+											<!--begin::Portlet-->
+											<div class="kt-portlet">
+												<div class="kt-portlet__head">
+													<div class="kt-portlet__head-label">
+														<h3 class="kt-portlet__head-title">Section</h3>
+													</div>
+												</div>
+												<div class="kt-portlet__body">
+
+													<!--begin::Section-->
+													<div class="kt-section">
+														<div class="kt-section__title">
+															Section Title
+														</div>
+														<div class="kt-section__desc">
+															Section description text.
+														</div>
+														<div class="kt-section__content">
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+														</div>
+														<div class="kt-separator kt-separator--space-lg kt-separator--border-dashed"></div>
+														<div class="kt-section__info">
+															Other info text.
+														</div>
+														<div class="kt-section__content">
+															Aipiscing ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+															Aadipiscing elit, sed do eiusmod tempor, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+														</div>
+														<div class="kt-separator kt-separator--space-lg kt-separator--border-solid"></div>
+														<div class="kt-section__desc">
+															Other description text.
+														</div>
+														<div class="kt-section__content">
+															Aipiscing ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+															Aadipiscing elit, sed do eiusmod tempor, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+														</div>
+													</div>
+
+													<!--end::Section-->
+												</div>
+											</div>
+
+											<!--end::Portlet-->
+										</div>
+									</div>
+								</div>
+
+								<!-- end:: Content -->
+							</div>
+    </section>
+
+
+
+
+
+
+    <script>
+        var KTAppOptions = {
+            "colors": {
+                "state": {
+                    "brand": "#5d78ff",
+                    "light": "#ffffff",
+                    "dark": "#282a3c",
+                    "primary": "#5867dd",
+                    "success": "#34bfa3",
+                    "info": "#36a3f7",
+                    "warning": "#ffb822",
+                    "danger": "#fd3995"
+                },
+                "base": {
+                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                }
+            }
+        };
+    </script>
+
+
+    <!-- bootstrap 5 buldle js  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <script src="js/plugins.bundle.js" type="text/javascript"></script>
+    <script src="js/scripts.bundle.js" type="text/javascript"></script>
+    <script src="js/wizard.js" type="text/javascript"></script>
+    <script src="css/pages/wizard/wizard-2.js" type="text/javascript"></script>
+    <script src="js/app.js"></script>
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+
+    <!--begin::Page Scripts(used by this page) -->
+	<script src="js/summernote.js" type="text/javascript"></script>
+
+    <!--begin::Page Scripts(used by this page) -->
+	<script src="js/form-repeater.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>

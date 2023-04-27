@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel: Access, Deployment, Developer Keys and SAP Add-on Requests. User Access Reviews and Operational
+        Checklists</title>
+    <meta name="description"
+        content="Sentinel: Access, Deployment, Developer Keys and SAP Add-on Requests. User Access Reviews and Operational Checklists" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- header sec -->
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/anglo_logo.png" class="img-fluid" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13 11H3C2.4 11 2 10.6 2 10V9C2 8.4 2.4 8 3 8H13C13.6 8 14 8.4 14 9V10C14 10.6 13.6 11 13 11ZM22 5V4C22 3.4 21.6 3 21 3H3C2.4 3 2 3.4 2 4V5C2 5.6 2.4 6 3 6H21C21.6 6 22 5.6 22 5Z"
+                                fill="currentColor" />
+                            <path opacity="0.3"
+                                d="M21 16H3C2.4 16 2 15.6 2 15V14C2 13.4 2.4 13 3 13H21C21.6 13 22 13.4 22 14V15C22 15.6 21.6 16 21 16ZM14 20V19C14 18.4 13.6 18 13 18H3C2.4 18 2 18.4 2 19V20C2 20.6 2.4 21 3 21H13C13.6 21 14 20.6 14 20Z"
+                                fill="currentColor" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <!-- main manu item  -->
+                        <li class="nav-item request_link">
+                            <a class="nav-link desktop-links" href="#">Requests</a>
+                            <input type="checkbox" id="show-request">
+                            <label for="show-request">Requests</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <!-- drowpdown manu item  -->
+                            <div class="sub_manu request">
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">Access Requests <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                    <input type="checkbox" id="show-access-request">
+                                    <label for="show-access-request">Access Requests</label><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <!-- sub dropdow manu item  -->
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+                                        <a href="">My Checklists</a>
+                                    </div>
+
+                                </div>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">Deployment Requests <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg></a>
+                                    <input type="checkbox" id="show-deployemnt-request">
+                                    <label for="show-deployemnt-request">Deployment Requests</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+
+                                    </div>
+                                </div>
+                                <div class="sub_manu_link">
+
+                                    <a class="desktop-links">Developer Key Requests <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                    <input type="checkbox" id="show-deployemnt-key-request">
+                                    <label for="show-deployemnt-key-request">Deployment Key Requests</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+
+                                    </div>
+                                </div>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">SAP Add-on Requests <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-chevron-right"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </a>
+                                    <input type="checkbox" id="show-sap-add-on-request">
+                                    <label for="show-sap-add-on-request">SAP Add-on Requests </label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">New Requests</a>
+                                        <a href="">My Requests</a>
+
+                                    </div>
+                                </div>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">System Operational Requests <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+
+                                    </a>
+                                    <input type="checkbox" id="show-system-operational">
+                                    <label for="show-system-operational">System Operational Requests </label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Data Synchronization</a>
+                                        <a href="">Server Patch</a>
+                                        <a href="">Server Upgrade</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- main manu item  -->
+
+                        <li class="nav-item checklist_link">
+                            <a class="nav-link desktop-links" href="#">Checklists</a>
+                            <input type="checkbox" id="show-checklist">
+                            <label for="show-checklist">Checklists</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu checklist">
+                                <div class="sub_manu_link">
+                                    <a class="nav-link desktop-links">Access Request Checklists
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg></a>
+
+                                    <input type="checkbox" id="show-request-checklists">
+                                    <label for="show-request-checklists">Access Request Checklists</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Pending Items
+                                        </a>
+                                        <a href="">My Cheklist Items
+                                        </a>
+                                        <a href="">Upload SAP Logs</a>
+                                    </div>
+                                </div>
+
+
+                                <div class="sub_manu_link">
+                                    <a class="nav-link desktop-links">System Operational Checklists
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+
+                                    </a>
+                                    <input type="checkbox" id="show-system-operational-checklist">
+                                    <label for="show-system-operational-checklist">System Operational Checklists</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Pending Items
+                                        </a>
+                                        <a href="">My Cheklist Items
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item user_access">
+                            <a class="nav-link desktop-links" href="">User Access</a>
+                            <input type="checkbox" id="show-Access">
+                            <label for="show-Access">User Access</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+
+                            <div class="sub_manu user_access">
+                                <a href="">Pending Approvals</a>
+
+
+                                <a href="">Exceptions</a>
+                                <div class="sub_manu_link">
+                                    <a class="desktop-links">Admin
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+
+                                    </a>
+                                    <input type="checkbox" id="show-admin">
+                                    <label for="show-admin">Admin</label>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                    <div class="sub_dropdown_manu">
+                                        <a href="">Pending Items
+                                        </a>
+                                        <a href="">My Cheklist Items
+                                        </a>
+                                        <a href="">Upload SAP Logs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item report_links">
+                            <input type="checkbox" id="show-report">
+                            <label for="show-report">Report</label>
+                            <a class="nav-link desktop-links" href="#">Reports</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu report">
+                                <a href="">Requests</a>
+                                <a href="">Checklists</a>
+                                <a href="">User Review</a>
+                            </div>
+                        </li>
+                        <li class="nav-item admin_links">
+
+                            <a class="nav-link desktop-links" href="#">Admin</a>
+                            <input type="checkbox" id="show-Admin">
+                            <label for="show-Admin">Admin</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu admin">
+                                <a href="">User Management</a>
+                                <a href="calendar.html">Calendar</a>
+                                <a href="">Delegate Approvals</a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item helps">
+                            <input type="checkbox" id="show-helps">
+                            <label for="show-helps">helps</label>
+                            <a class="nav-link desktop-links" href="#">Helps</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu helps">
+                                <a href="">Log a Ticket</a>
+                                <a href="">FAQ</a>
+                                <a href="">About Sentinel</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item helps">
+                            <input type="checkbox" id="show-helps">
+                            <label for="show-helps">Component Added</label>
+                            <a class="nav-link desktop-links" href="#">Component Added</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                            <div class="sub_manu helps">
+                                <a href="wizard-2.html">wizard 2</a>
+                                <a href="data-local.html">Data local</a>
+                                <a href="modal.html">Modal</a>
+                                <a href="typography.html">Typography</a>
+                                <a href="summernote.html">Summernote</a>
+                                <a href="form-repeater.html">Form Repeater</a>
+                                <a href="base.html">Base</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <ul class="right_side_nav search_and_profile">
+                    <div class="search_and_profiles_wrap">
+                        <div class="search search_icon">
+                            <span class="search_icon_svg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg></span>
+
+                            <!-- search input drowpdown -->
+                            <form class="search_input_dropdown">
+                                <div class="search_input">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                        </svg></span>
+                                    <input type="text" class="form-control" id="exampleInputText"
+                                        aria-describedby="emailHelp" placeholder="Search...">
+
+                                </div>
+
+                            </form>
+                        </div>
+                        <!-- profile image -->
+
+                        <div class="user_profile_icon">
+                            <img src="img/user_logo.png" class="img-fluid" alt="">
+
+                            <div class="profile_details_and_account_settings">
+                                <div class="profile_details">
+                                    <img src="img/user_logo.png" class="img-fluid" alt="">
+                                    <div class="user_name">
+                                        <strong>Adam Smith</strong>
+                                        <a href="">junior@smith.com</a>
+                                    </div>
+                                </div>
+                                <ul class="account_setting_and_sign_out">
+                                    <li class="nav-link"><a href="#">Account Settings</a> </li>
+                                    <li class="nav-link"><a href="#">Sign out</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- more about profile  -->
+
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Wizardhttp://localhost/metronic/custom/pages/wizard/wizard-2.html -->
+    
+
+    <section class="wizard-2">
+        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+            <div class="kt-container  kt-container--fluid ">
+                <div class="kt-subheader__main">
+                    <h3 class="kt-subheader__title">
+                        Wizard 2 </h3>
+                    <span class="kt-subheader__separator kt-hidden"></span>
+                    <div class="kt-subheader__breadcrumbs">
+                        <a href="#" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+                        <span class="kt-subheader__breadcrumbs-separator"></span>
+                        <a href="" class="kt-subheader__breadcrumbs-link">
+                            Pages </a>
+                        <span class="kt-subheader__breadcrumbs-separator"></span>
+                        <a href="" class="kt-subheader__breadcrumbs-link">
+                            Wizard </a>
+                        <span class="kt-subheader__breadcrumbs-separator"></span>
+                        <a href="" class="kt-subheader__breadcrumbs-link">
+                            Wizard 2 </a>
+
+                        <!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+                    </div>
+                </div>
+                <div class="kt-subheader__toolbar">
+                    <div class="kt-subheader__wrapper">
+                        <a href="#" class="btn kt-subheader__btn-primary">
+                            Actions &nbsp;
+
+                            <!--<i class="flaticon2-calendar-1"></i>-->
+                        </a>
+                        <div class="dropdown dropdown-inline" data-toggle="kt-tooltip" title="" data-placement="left" data-original-title="Quick actions">
+                            <a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--success kt-svg-icon--md">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                        <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                        <path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000"></path>
+                                    </g>
+                                </svg>
+
+                                <!--<i class="flaticon2-plus"></i>-->
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-md dropdown-menu-right">
+
+                                <!--begin::Nav-->
+                                <ul class="kt-nav">
+                                    <li class="kt-nav__head">
+                                        Add anything or jump to:
+                                        <i class="flaticon2-information" data-toggle="kt-tooltip" data-placement="right" title="" data-original-title="Click to learn more..."></i>
+                                    </li>
+                                    <li class="kt-nav__separator"></li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-drop"></i>
+                                            <span class="kt-nav__link-text">Order</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-calendar-8"></i>
+                                            <span class="kt-nav__link-text">Ticket</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-telegram-logo"></i>
+                                            <span class="kt-nav__link-text">Goal</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-new-email"></i>
+                                            <span class="kt-nav__link-text">Support Case</span>
+                                            <span class="kt-nav__link-badge">
+                                                <span class="kt-badge kt-badge--success">5</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__separator"></li>
+                                    <li class="kt-nav__foot">
+                                        <a class="btn btn-label-brand btn-bold btn-sm" href="#">Upgrade plan</a>
+                                        <a class="btn btn-clean btn-bold btn-sm" href="#" data-toggle="kt-tooltip" data-placement="right" title="" data-original-title="Click to learn more...">Learn more</a>
+                                    </li>
+                                </ul>
+
+                                <!--end::Nav-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+            <div class="kt-portlet">
+                <div class="kt-portlet__body kt-portlet__body--fit">
+                    <div class="kt-grid  kt-wizard-v2 kt-wizard-v2--white" id="kt_wizard_v2"
+                        data-ktwizard-state="step-first">
+                        <div class="kt-grid__item kt-wizard-v2__aside">
+                            <!--begin: Form Wizard Nav -->
+                            <div class="kt-wizard-v2__nav">
+
+                                <!--doc: Remove "kt-wizard-v2__nav-items--clickable" class and also set 'clickableSteps: false' in the JS init to disable manually clicking step titles -->
+                                <ul class="kt-wizard-v2__nav-items kt-wizard-v2__nav-items--clickable nav flex-column nav-pills"
+                                    id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <li class="nav-item">
+                                    <button type="button" class="kt-wizard-v2__nav-item nav-link active w-100 text-start" id="v-pills-account-tab"
+                                        data-bs-toggle="pill" data-bs-target="#v-pills-account" type="button" role="tab"
+                                        aria-controls="v-pills-account" aria-selected="true">
+                                        <div class="kt-wizard-v2__nav-body">
+                                            <div class="kt-wizard-v2__nav-icon">
+                                                <i class="flaticon-globe"></i>
+                                            </div>
+                                            <div class="kt-wizard-v2__nav-label">
+                                                <div class="kt-wizard-v2__nav-label-title">
+                                                    Account Settings
+                                                </div>
+                                                <div class="kt-wizard-v2__nav-label-desc">
+                                                    Setup Your Account Details
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button type="button" class="kt-wizard-v2__nav-item nav-link w-100 text-start" id="v-pills-location-tab"
+                                        data-bs-toggle="pill" data-bs-target="#v-pills-location" type="button"
+                                        role="tab" aria-controls="v-pills-location" aria-selected="false">
+                                        <div class="kt-wizard-v2__nav-body">
+                                            <div class="kt-wizard-v2__nav-icon">
+                                                <i class="flaticon-bus-stop"></i>
+                                            </div>
+                                            <div class="kt-wizard-v2__nav-label">
+                                                <div class="kt-wizard-v2__nav-label-title">
+                                                    Setup Locations
+                                                </div>
+                                                <div class="kt-wizard-v2__nav-label-desc">
+                                                    Choose Your Location Map
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="kt-wizard-v2__nav-item nav-link w-100 text-start" id="v-pills-channels-tab"
+                                        data-bs-toggle="pill" data-bs-target="#v-pills-channels" type="button"
+                                        role="tab" aria-controls="v-pills-channels" aria-selected="false">
+                                        <div class="kt-wizard-v2__nav-body">
+                                            <div class="kt-wizard-v2__nav-icon">
+                                                <i class="flaticon-responsive"></i>
+                                            </div>
+                                            <div class="kt-wizard-v2__nav-label">
+                                                <div class="kt-wizard-v2__nav-label-title">
+                                                    Support Channels
+                                                </div>
+                                                <div class="kt-wizard-v2__nav-label-desc">
+                                                    Add Your Support Agents
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="kt-wizard-v2__nav-item nav-link w-100 text-start" id="v-pills-delivery-tab"
+                                        data-bs-toggle="pill" data-bs-target="#v-pills-delivery" type="button"
+                                        role="tab" aria-controls="v-pills-delivery" aria-selected="false">
+                                        <div class="kt-wizard-v2__nav-body">
+                                            <div class="kt-wizard-v2__nav-icon">
+                                                <i class="flaticon-trophy"></i>
+                                            </div>
+                                            <div class="kt-wizard-v2__nav-label">
+                                                <div class="kt-wizard-v2__nav-label-title">
+                                                    Set Your Delivery Address
+                                                </div>
+                                                <div class="kt-wizard-v2__nav-label-desc">
+                                                    Address, Street, City, State
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="kt-wizard-v2__nav-item nav-link w-100 text-start" id="v-pills-payment-tab"
+                                        data-bs-toggle="pill" data-bs-target="#v-pills-payment" type="button" role="tab"
+                                        aria-controls="v-pills-payment" aria-selected="false">
+                                        <div class="kt-wizard-v2__nav-body">
+                                            <div class="kt-wizard-v2__nav-icon">
+                                                <i class="flaticon-truck"></i>
+                                            </div>
+                                            <div class="kt-wizard-v2__nav-label">
+                                                <div class="kt-wizard-v2__nav-label-title">
+                                                    Make Payment
+                                                </div>
+                                                <div class="kt-wizard-v2__nav-label-desc">
+                                                    Use Credit or Debit Cards
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="kt-wizard-v2__nav-item nav-link w-100 text-start" id="v-pills-complete-tab"
+                                        data-bs-toggle="pill" data-bs-target="#v-pills-complete" type="button"
+                                        role="tab" aria-controls="v-pills-complete" aria-selected="false">
+                                        <div class="kt-wizard-v2__nav-body">
+                                            <div class="kt-wizard-v2__nav-icon">
+                                                <i class="flaticon-confetti"></i>
+                                            </div>
+                                            <div class="kt-wizard-v2__nav-label">
+                                                <div class="kt-wizard-v2__nav-label-title">
+                                                    Completed!
+                                                </div>
+                                                <div class="kt-wizard-v2__nav-label-desc">
+                                                    Review and Submit
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </li>
+                                </ul>
+                            </div>
+
+                            <!--end: Form Wizard Nav -->
+                        </div>
+                        <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v2__wrapper tab-content"
+                            id="v-pills-tabContent">
+
+                            <!--begin: Form Wizard Form-->
+                            <form class="kt-form" id="kt_form">
+
+                                <!--begin: Form Wizard Step 1-->
+                                <div class="kt-wizard-v2__content tab-pane fade show active" id="v-pills-account"
+                                    role="tabpanel" aria-labelledby="v-pills-account-tab">
+                                    <div class="kt-heading kt-heading--md">Enter your Account Details</div>
+                                    <div class="kt-form__section kt-form__section--first">
+                                        <div class="kt-wizard-v2__form">
+                                            <div class="form-group">
+                                                <label>First Name</label>
+                                                <input type="text" class="form-control" name="fname"
+                                                    placeholder="First Name" value="John">
+                                                <span class="form-text text-muted">Please enter your first name.</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Last Name</label>
+                                                <input type="text" class="form-control" name="lname"
+                                                    placeholder="Last Name" value="Wick">
+                                                <span class="form-text text-muted">Please enter your last name.</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Phone</label>
+                                                        <input type="tel" class="form-control" name="phone"
+                                                            placeholder="phone" value="+61412345678">
+                                                        <span class="form-text text-muted">Please enter your phone
+                                                            number.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Email</label>
+                                                        <input type="email" class="form-control" name="email"
+                                                            placeholder="Email" value="john.wick@reeves.com">
+                                                        <span class="form-text text-muted">Please enter your email
+                                                            address.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-form__actions mt-4">
+                                        <a
+                                            class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnPrevious invisible ">
+                                            Previous
+                                    </a>
+                                        <!-- <button
+                                            class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u">
+                                            Submit
+                                        </button> -->
+                                        <a
+                                            class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnNext text-white">
+                                            Next Step
+                                    </a>
+                                    </div>
+                                </div>
+
+                                <!--end: Form Wizard Step 1-->
+
+                                <!--begin: Form Wizard Step 2-->
+                                <div class="kt-wizard-v2__content tab-pane fade" id="v-pills-location" role="tabpanel"
+                                    aria-labelledby="v-pills-location-tab">
+                                    <div class="kt-heading kt-heading--md">Setup Your Current Location</div>
+                                    <div class="kt-form__section kt-form__section--first">
+                                        <div class="kt-wizard-v2__form">
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Address Line 1</label>
+                                                        <input type="text" class="form-control" name="address1"
+                                                            placeholder="Address Line 1" value="Address Line 1">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            Address.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Address Line 2</label>
+                                                        <input type="text" class="form-control" name="address2"
+                                                            placeholder="Address Line 2" value="Address Line 2">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            Address.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Postcode</label>
+                                                        <input type="text" class="form-control" name="postcode"
+                                                            placeholder="Postcode" value="3000">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            Postcode.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>City</label>
+                                                        <input type="text" class="form-control" name="city"
+                                                            placeholder="City" value="Melbourne">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            City.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>State</label>
+                                                        <input type="text" class="form-control" name="state"
+                                                            placeholder="State" value="VIC">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            Postcode.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Country:</label>
+                                                        <select name="country" class="form-control">
+                                                            <option value="">Select</option>
+                                                            <option value="AF">Afghanistan</option>
+                                                            <option value="AX">Åland Islands</option>
+                                                            <option value="AL">Albania</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-form__actions mt-4">
+                                        <a
+                                            class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnPrevious">
+                                            Previous
+                                    </a>
+                                        <!-- <button
+                                            class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u">
+                                            Submit
+                                        </button> -->
+                                        <a
+                                            class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnNext text-white">
+                                            Next Step
+                                    </a>
+                                    </div>
+                                </div>
+
+                                <!--end: Form Wizard Step 2-->
+
+                                <!--begin: Form Wizard Step 3-->
+                                <div class="kt-wizard-v2__content tab-pane fade" id="v-pills-channels" role="tabpanel"
+                                    aria-labelledby="v-pills-channels-tab">
+                                    <div class="kt-heading kt-heading--md">Select your Services</div>
+                                    <div class="kt-form__section kt-form__section--first">
+                                        <div class="kt-wizard-v2__form">
+                                            <div class="form-group">
+                                                <label>Delivery Type</label>
+                                                <select name="delivery" class="form-control">
+                                                    <option value="">Select a Service Type Option</option>
+                                                    <option value="overnight" selected>Overnight Delivery (within 48
+                                                        hours)</option>
+                                                    <option value="express">Express Delivery (within 5 working days)
+                                                    </option>
+                                                    <option value="basic">Basic Delivery (within 5 - 10 working days)
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Packaging Type</label>
+                                                <select name="packaging" class="form-control">
+                                                    <option value="">Select a Packaging Type Option</option>
+                                                    <option value="regular" selected>Regular Packaging</option>
+                                                    <option value="oversized">Oversized Packaging</option>
+                                                    <option value="fragile">Fragile Packaging</option>
+                                                    <option value="frozen">Frozen Packaging</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Preferred Delivery Window</label>
+                                                <select name="preferreddelivery" class="form-control">
+                                                    <option value="">Select a Preferred Delivery Option</option>
+                                                    <option value="morning" selected>Morning Delivery (8:00AM - 11:00AM)
+                                                    </option>
+                                                    <option value="afternoon">Afternoon Delivery (11:00AM - 3:00PM)
+                                                    </option>
+                                                    <option value="evening">Evening Delivery (3:00PM - 7:00PM)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-form__actions mt-4">
+                                        <a
+                                            class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnPrevious">
+                                            Previous
+                                    </a>
+                                        <!-- <button
+                                            class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u">
+                                            Submit
+                                        </button> -->
+                                        <a
+                                            class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnNext text-white">
+                                            Next Step
+                                    </a>
+                                    </div>
+                                </div>
+
+                                <!--end: Form Wizard Step 3-->
+
+                                <!--begin: Form Wizard Step 4-->
+                                <div class="kt-wizard-v2__content tab-pane fade" id="v-pills-delivery" role="tabpanel"
+                                    aria-labelledby="v-pills-delivery-tab">
+                                    <div class="kt-heading kt-heading--md">Setup Your Delivery Location</div>
+                                    <div class="kt-form__section kt-form__section--first">
+                                        <div class="kt-wizard-v2__form">
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Address Line 1</label>
+                                                        <input type="text" class="form-control" name="locaddress1"
+                                                            placeholder="Address Line 1" value="Address Line 1">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            Address.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Address Line 2</label>
+                                                        <input type="text" class="form-control" name="locaddress2"
+                                                            placeholder="Address Line 2" value="Address Line 2">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            Address.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Postcode</label>
+                                                        <input type="text" class="form-control" name="locpostcode"
+                                                            placeholder="Postcode" value="3072">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            Postcode.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>City</label>
+                                                        <input type="text" class="form-control" name="loccity"
+                                                            placeholder="City" value="Preston">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            City.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>State</label>
+                                                        <input type="text" class="form-control" name="locstate"
+                                                            placeholder="State" value="VIC">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            Postcode.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Country:</label>
+                                                        <select name="loccountry" class="form-control">
+                                                            <option value="">Select</option>
+                                                            <option value="AF">Afghanistan</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-form__actions mt-4">
+                                        <a
+                                            class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnPrevious">
+                                            Previous
+                                    </a>
+                                        <!-- <button
+                                            class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u">
+                                            Submit
+                                        </button> -->
+                                        <a
+                                            class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnNext text-white">
+                                            Next Step
+                                    </a>
+                                    </div>
+                                </div>
+
+                                <!--end: Form Wizard Step 4-->
+
+                                <!--begin: Form Wizard Step 5-->
+                                <div class="kt-wizard-v2__content tab-pane fade" id="v-pills-payment" role="tabpanel"
+                                    aria-labelledby="v-pills-payment-tab">
+                                    <div class="kt-heading kt-heading--md">Enter your Payment Details</div>
+                                    <div class="kt-form__section kt-form__section--first">
+                                        <div class="kt-wizard-v2__form">
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Name on Card</label>
+                                                        <input type="text" class="form-control" name="ccname"
+                                                            placeholder="Card Name" value="John Wick">
+                                                        <span class="form-text text-muted">Please enter your Card
+                                                            Name.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Card Number</label>
+                                                        <input type="text" class="form-control" name="ccnumber"
+                                                            placeholder="Card Number" value="4444 3333 2222 1111">
+                                                        <span class="form-text text-muted">Please enter your
+                                                            Address.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <div class="form-group">
+                                                        <label>Card Expiry Month</label>
+                                                        <input type="number" class="form-control" name="ccmonth"
+                                                            placeholder="Card Expiry Month" value="01">
+                                                        <span class="form-text text-muted">Please enter your Card Expiry
+                                                            Month.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <div class="form-group">
+                                                        <label>Card Expiry Year</label>
+                                                        <input type="number" class="form-control" name="ccyear"
+                                                            placeholder="Card Expire Year" value="21">
+                                                        <span class="form-text text-muted">Please enter your Card Expiry
+                                                            Year.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4">
+                                                    <div class="form-group">
+                                                        <label>Card CVV Number</label>
+                                                        <input type="password" class="form-control" name="cccvv"
+                                                            placeholder="Card CVV Number" value="123">
+                                                        <span class="form-text text-muted">Please enter your Card CVV
+                                                            Number.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-form__actions mt-4">
+                                        <a
+                                            class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnPrevious">
+                                            Previous
+                                    </a>
+                                        <!-- <button
+                                            class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u">
+                                            Submit
+                                        </button> -->
+                                        <a
+                                            class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnNext text-white">
+                                            Next Step
+                                    </a>
+                                    </div>
+                                </div>
+
+                                <!--end: Form Wizard Step 5-->
+
+                                <!--begin: Form Wizard Step 6-->
+                                <div class="kt-wizard-v2__content tab-pane fade" id="v-pills-complete" role="tabpanel"
+                                    aria-labelledby="v-pills-complete-tab">
+                                    <div class="kt-heading kt-heading--md">Review your Details and Submit</div>
+                                    <div class="kt-form__section kt-form__section--first">
+                                        <div class="kt-wizard-v2__review">
+                                            <div class="kt-wizard-v2__review-item">
+                                                <div class="kt-wizard-v2__review-title">
+                                                    Account Details
+                                                </div>
+                                                <div class="kt-wizard-v2__review-content">
+                                                    John Wick<br />
+                                                    Phone: +61412345678<br />
+                                                    Email: johnwick@reeves.com
+                                                </div>
+                                            </div>
+                                            <div class="kt-wizard-v2__review-item">
+                                                <div class="kt-wizard-v2__review-title">
+                                                    Support Location Address
+                                                </div>
+                                                <div class="kt-wizard-v2__review-content">
+                                                    Address Line 1<br />
+                                                    Address Line 2<br />
+                                                    Melbourne 3000, VIC, Australia
+                                                </div>
+                                            </div>
+                                            <div class="kt-wizard-v2__review-item">
+                                                <div class="kt-wizard-v2__review-title">
+                                                    Support Channels
+                                                </div>
+                                                <div class="kt-wizard-v2__review-content">
+                                                    Overnight Delivery with Regular Packaging<br />
+                                                    Preferred Morning (8:00AM - 11:00AM) Delivery
+                                                </div>
+                                            </div>
+                                            <div class="kt-wizard-v2__review-item">
+                                                <div class="kt-wizard-v2__review-title">
+                                                    Delivery Address
+                                                </div>
+                                                <div class="kt-wizard-v2__review-content">
+                                                    Address Line 1<br />
+                                                    Address Line 2<br />
+                                                    Preston 3072, VIC, Australia
+                                                </div>
+                                            </div>
+                                            <div class="kt-wizard-v2__review-item">
+                                                <div class="kt-wizard-v2__review-title">
+                                                    Payment Details
+                                                </div>
+                                                <div class="kt-wizard-v2__review-content">
+                                                    Card Number: xxxx xxxx xxxx 1111<br />
+                                                    Card Name: John Wick<br />
+                                                    Card Expiry: 01/21
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="kt-form__actions mt-4">
+                                        <a
+                                            class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u btnPrevious">
+                                            Previous
+                                    </a>
+                                        <!-- <button
+                                            class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u">
+                                            Submit
+                                        </button> -->
+                                        
+                                        <a data-toggle="modal" data-target="#kt_modal_1"
+                                            class="btn btn-brand btn-md btn-tall btn-success btn-wide kt-font-bold kt-font-transform-u btnNext text-white" >
+                                            Submit
+                                    </a>
+                                    </div>
+                                </div>
+
+                                <!--end: Form Wizard Step 6-->
+
+                                <!--begin: Form Actions -->
+                                
+
+                                <!--end: Form Actions -->
+                            </form>
+
+                            <!--end: Form Wizard Form-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--begin::Modal-->
+<div class="modal fade" id="kt_modal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-md modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body py-5 text-center">
+                <img src="img/right-check.png" class="" alt="">
+               <p class="my-4">The application has been successfully submitted!</p>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ok</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+    <script>
+        var KTAppOptions = {
+            "colors": {
+                "state": {
+                    "brand": "#5d78ff",
+                    "light": "#ffffff",
+                    "dark": "#282a3c",
+                    "primary": "#5867dd",
+                    "success": "#34bfa3",
+                    "info": "#36a3f7",
+                    "warning": "#ffb822",
+                    "danger": "#fd3995"
+                },
+                "base": {
+                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                }
+            }
+        };
+    </script>
+
+
+    <!-- bootstrap 5 buldle js  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <script src="js/plugins.bundle.js" type="text/javascript"></script>
+    <script src="js/scripts.bundle.js" type="text/javascript"></script>
+    <script src="js/wizard.js" type="text/javascript"></script>
+    <script src="css/pages/wizard/wizard-2.js" type="text/javascript"></script>
+    <script src="js/app.js"></script>
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+
+    <!--begin::Page Scripts(used by this page) -->
+	<script src="js/summernote.js" type="text/javascript"></script>
+
+    <!--begin::Page Scripts(used by this page) -->
+	<script src="js/form-repeater.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>
